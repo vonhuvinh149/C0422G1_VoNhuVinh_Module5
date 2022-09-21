@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="container-fluid" id="container">
+    <div class="row">
+        <h1 class="text-center text-danger mb-3">Thêm mới dịch vụ</h1>
+    </div>
+    <div class="row d-flex justify-content-center ">
+        <form  style="width: 550px"  method="post">
+
+            <div class="mb-4 text-white">
+                <label class="form-label" for="type_facility">Tên dịch vụ</label>
+                <select  id="type_facility"
+                         style="width: 100% ; font-size: 16px ; color:#666666;padding: 7px ;">
+                    <option
+                    >sss</option>
+                </select>
+            </div>
+
+            <div ></div>
+            <div class="form-outline mb-4">
+                <input type="text" id="form4Example2" class="form-control" />
+                <label class="form-label " for="form4Example2">Nhập tên dịch vụ</label>
+            </div>
+
+            <div class="form-outline mb-4">
+                <input type="text" id="form4Example3" class="form-control" />
+                <label class="form-label " for="form4Example3">Nhập diện tích</label>
+            </div>
+
+            <div class="form-outline mb-4">
+                <input type="text" id="form4Example4" class="form-control" />
+                <label class="form-label " for="form4Example4">Chi phí thuê</label>
+            </div>
+
+            <div class="form-outline mb-4">
+                <input type="text" id="form4Example5" class="form-control" />
+                <label class="form-label" for="form4Example5">Số người tối đa</label>
+            </div>
+
+            <div class="form-outline mb-4" id="standardRoom_row">
+                <input type="text" id="form4Example6" class="form-control"  value="null"/>
+                <label class="form-label" for="form4Example6">Tiêu chuẩn phòng</label>
+            </div>
+
+            <div class="form-outline mb-4" id="poolArea_row">
+                <input type="text" id="form4Example8" class="form-control"  value="null"/>
+                <label class="form-label" for="form4Example8">Diện tích hồ bơi</label>
+            </div>
+
+            <div class="form-outline mb-4" id="numberFloor_row">
+                <input type="text" id="form4Example9" class="form-control" value="null"/>
+                <label class="form-label" for="form4Example9">Số tầng</label>
+            </div>
+
+            <div class="form-outline mb-4" id="facilityFree_Row">
+                <input type="text" id="form4Example10" class="form-control"  value="null"/>
+                <label class="form-label" for="form4Example10">Dịch vụ miễn phí đi kèm </label>
+            </div>
+
+            <div class=" mb-4">
+                <label class="form-label">mả kiểu thuê</label>
+                <select name=""
+                        style="width: 100% ; font-size: 16px ; color:#666666;padding: 7px">
+                    <option
+                    ></option>
+                </select>
+            </div>
+
+            <div class="form-outline mb-4" id="description_row">
+                <textarea id="form4Example7" class="form-control" /> </textarea>
+                <label class="form-label" for="form4Example7">Mô tả</label>
+            </div>
+
+            <!-- Submit button -->
+            <button type="submit" class="btn btn-primary btn-block mb-4">Save</button>
+            <a href="/facility/list_facility" class="btn btn-secondary" style="width: 100%">Back To List</a>
+        </form>
+    </div>
+</div>
+</body>
+</html>
