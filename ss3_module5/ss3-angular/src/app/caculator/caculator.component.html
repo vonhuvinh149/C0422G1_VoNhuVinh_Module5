@@ -1,0 +1,10 @@
+<input #num1 type="number" (change)="total(num1.value,num2.value,operator.value)">
+<select name="" #operator (change)="total(num1.value,num2.value,operator.value)">
+  <option value="+">+</option>
+  <option value="-">-</option>
+  <option value="*">*</option>
+  <option value="/">/</option>
+</select>
+<input #num2 type="number" (change)="total(num1.value,num2.value,operator.value)">
+<div>kết quả: {{result}}</div>
+
