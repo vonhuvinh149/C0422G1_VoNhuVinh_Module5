@@ -1,0 +1,87 @@
+
+section {
+  background-image: url("https://i.pinimg.com/originals/0d/e8/5c/0de85ca4792882d9db678efc0ab64b84.jpg");
+  background-size: cover;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  overflow: hidden;
+  z-index: 1;
+}
+
+#content h1 {
+  font-family: Algerian;
+  color: white;
+  font-size: 60px;
+  font-weight: 400;
+  text-shadow: 1px 1px 1px black;
+}
+
+#content h4 {
+  color: white;
+  font-family: SansSerif;
+  font-weight: bolder;
+}
+
+#content {
+  text-align: center;
+}
+
+/*-------------------------------------*/
+#background{
+  background-color: rgba(0,180,155,0.2);
+}
+
+
+
+#check h2 {
+  font-family: "Baskerville Old Face";
+  font-weight: bolder;
+  color: #336666;
+}
+
+#check p {
+  color: black;
+}
+
+.check_1 {
+  border-right: 3px solid gainsboro;
+}
+
+.img_card {
+  background-image: url("https://s7d2.scene7.com/is/image/ritzcarlton/pnrqz-king-50661983?$XlargeViewport100pct$");
+  background-size: cover;
+  width: 100%;
+  height: 220px;
+}
+
+.card {
+  box-shadow: 3px 3px 5px #9C9C9C;
+  margin-bottom: 40px;
+  border: none;
+  color: white;
+  background: linear-gradient(to right, #66CC99, #66CCCC);
+  overflow: hidden;
+}
+#room h1{
+  font-family: SansSerif;
+  color: black;
+  font-weight: bolder;
+  text-shadow: 3px 3px 5px #666666;
+  font-size: 50px;
+}
+#room h1 span{
+  color: #FF3399;
+}
+
+#background_2{
+  background-image: url("https://cdn.scb.com.vn/picture/0512_.webp");
+  position: fixed;
+}
+
+
+
+

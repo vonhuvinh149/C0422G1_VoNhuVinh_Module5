@@ -11,6 +11,9 @@ import { ListFacilityComponent } from './facility/list-facility/list-facility.co
 import { CreateFacilityComponent } from './facility/create-facility/create-facility.component';
 import { EditFacilityComponent } from './facility/edit-facility/edit-facility.component';
 import { DetailFacilityComponent } from './facility/detail-facility/detail-facility.component';
+import { HomeComponent } from './home/home.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +25,10 @@ import { DetailFacilityComponent } from './facility/detail-facility/detail-facil
     ListFacilityComponent,
     CreateFacilityComponent,
     EditFacilityComponent,
-    DetailFacilityComponent
+    DetailFacilityComponent,
+    HomeComponent,
+    NavbarComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
