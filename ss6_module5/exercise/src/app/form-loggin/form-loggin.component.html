@@ -1,0 +1,63 @@
+<div class="container">
+  <div class="row">
+    <div class="col-5">
+      <form [formGroup]="formReactive" (ngSubmit)="onSubmitForm()">
+        <div class="mb-3">
+          <label for="email" class="form-label">Email</label>
+          <input formControlName="email" name="email" type="email" class="form-control" id="email"
+                 aria-describedby="emailHelp">
+          <div class="text-danger"
+               *ngIf="formReactive.controls.email.hasError('email') && formReactive.controls.email.touched">Vui lòng
+            nhập đúng định dạng
+          </div>
+          <div class="text-danger"
+               *ngIf="formReactive.controls.email.hasError('required') && formReactive.controls.email.touched">Vui lòng
+            nhập
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="country" class="form-label">Country</label>
+          <select formControlName="country" name="country" id="country">
+            <option value="1">Viet Nam</option>
+            <option value="2">USA</option>
+            <option value="3">Korea</option>
+          </select>
+        </div>
+        <div class="text-danger"
+             *ngIf="formReactive.controls.country.hasError('required') && formReactive.controls.country.touched">Vui lòng chọn
+        </div>
+        <div class="mb-3">
+          <label for="age" class="form-label">Age</label>
+          <input type="text" formControlName="age" name="age" class="form-control" id="age">
+        </div>
+        <div class="text-danger"
+             *ngIf="formReactive.controls.age.hasError('required') && formReactive.controls.age.touched">Vui lòng nhập
+        </div>
+        <div class="mb-3">
+          <label for="gender" class="form-label">gender</label>
+          <input type="text" formControlName="gender" name="gender" class="form-control" id="gender">
+        </div>
+        <div class="text-danger"
+             *ngIf="formReactive.controls.gender.hasError('required') && formReactive.controls.gender.touched">Vui lòng
+          nhập
+        </div>
+        <div class="mb-3">
+          <label for="phone" class="form-label">phone</label>
+          <input type="text" formControlName="phone" name="phone" class="form-control" id="phone">
+        </div>
+        <div class="text-danger"
+             *ngIf="formReactive.controls.phone.hasError('required') && formReactive.controls.phone.touched">Vui lòng
+          nhập
+        </div>
+        <div class="text-danger"
+             *ngIf="formReactive.controls.phone.hasError('pattern') && formReactive.controls.phone.touched">Vui lòng
+          nhập đúng định dạng
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+
