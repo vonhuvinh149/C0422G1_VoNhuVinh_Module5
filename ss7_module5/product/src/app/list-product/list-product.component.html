@@ -6,7 +6,7 @@
 <div class="container">
   <div class="row">
     <div class="col">
-      <table>
+      <table >
         <thead>
         <tr>
           <td>ID</td>
@@ -18,15 +18,15 @@
         </thead>
         <tbody>
         <tr *ngFor="let product of products">
-          <td>{{product.productId}}</td>
+          <td>{{product.id}}</td>
           <td>{{product.productName}}</td>
           <td>{{product.price}}</td>
           <td>{{product.description}}</td>
           <td>
-            <button type="button" [routerLink]="['',product.productId]">edit</button>
+            <button type="button" [routerLink]="['',product.id]">edit</button>
           </td>
           <td>
-            <button type="button" (click)="delete(product.productId)">delete</button>
+            <button type="button" (click)="delete(product.id)">delete</button>
           </td>
         </tr>
         </tbody>
@@ -34,3 +34,5 @@
     </div>
   </div>
 </div>
+
+

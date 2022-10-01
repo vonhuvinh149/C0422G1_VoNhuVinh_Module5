@@ -11,17 +11,20 @@ import {ProductService} from '../service/product.service';
 })
 export class EditProductComponent implements OnInit {
   product: IProduct;
-  updateForm: FormGroup;
+  updateForm: FormGroup ;
 
   constructor(private activatedRoute: ActivatedRoute, private productService: ProductService, private router: Router) {
     activatedRoute.paramMap.subscribe((paramMap: ParamMap) => {
       const id = paramMap.get('id');
-      this.product = this.productService.getProductById(parseInt(id));
-      this.updateForm = new FormGroup({
-        productId: new FormControl(this.product.productId),
-        productName: new FormControl(this.product.productName),
-        price: new FormControl(this.product.price),
-        description: new FormControl(this.product.description)
+      console.log(id);
+      this.productService.getProductById(parseInt(id)).subscribe(next => {
+        this.product = next;
+        this.updateForm = new FormGroup({
+          id: new FormControl(this.product.id),
+          productName: new FormControl(this.product.productName),
+          price: new FormControl(this.product.price),
+          description: new FormControl(this.product.description)
+        });
       });
 
     });
@@ -31,9 +34,11 @@ export class EditProductComponent implements OnInit {
   }
 
 
-  onSubmitCeate() {
+  onSubmitEdit() {
     console.log(this.updateForm.value);
-    this.productService.getUpdateProduct(this.updateForm.value);
-    this.router.navigateByUrl('');
+    this.productService.getUpdateProduct(this.updateForm.value).subscribe(next => {
+      this.router.navigateByUrl('');
+    });
+
   }
 }

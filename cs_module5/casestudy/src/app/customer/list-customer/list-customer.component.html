@@ -1,73 +1,43 @@
+<app-navbar></app-navbar>
 <section>
   <div id="form_create">
-    <h1>Danh sách khách hàng</h1>
-    <table class="table table-hover">
+    <div class="row">
+      <div class="col">
+        <a routerLink="/create-customer" class="btn btn-success">Create</a>
+      </div>
+      <div class="col-lg-8">
+        <h1>Danh sách khách hàng</h1>
+      </div>
+      <div class="col"></div>
+    </div>
+    <table class="table table-hover" cellpadding="10px">
+      <thead>
       <tr>
-        <th>STT</th>
+        <th>ID</th>
         <th>Tên Khách hàng</th>
         <th>Số Điện thoại</th>
         <th>Email</th>
         <th>Địa Chỉ</th>
+        <th>Giới tính</th>
+        <th>Ngày sinh</th>
+        <th>CMNN/CCCD</th>
         <th>Loại khách</th>
-        <th>Loại khách</th>
-        <th>Loại khách</th>
-        <th>Loại khách</th>
       </tr>
-      <tr>
-        <td>1</td>
-        <td>2</td>
-        <td>3ssssssssssssssssss</td>
-        <td>ssssssssssssssssss</td>
-        <td>5</td>
-        <td>6</td>
-        <td>7</td>
-        <td>8</td>
-        <td>9</td>
+      </thead>
+      <tbody>
+      <tr *ngFor="let customers of customer">
+        <td>{{customers.customerId}}</td>
+        <td>{{customers.customerName}}</td>
+        <td>{{customers.phone}}</td>
+        <td>{{customers.email}}</td>
+        <td>{{customers.address}}</td>
+        <td>{{customers.gender}}</td>
+        <td>{{customers.dateOfBirth}}</td>
+        <td>{{customers.idCard}}</td>
+        <td>{{customers.customerTypeId}}</td>
       </tr>
-      <tr>
-        <td>1</td>
-        <td>2</td>
-        <td>3</td>
-        <td>4</td>
-        <td>5</td>
-        <td>6</td>
-        <td>7</td>
-        <td>8</td>
-        <td>9</td>
-      </tr>
-      <tr>
-        <td>1</td>
-        <td>2</td>
-        <td>3</td>
-        <td>4</td>
-        <td>5</td>
-        <td>6</td>
-        <td>7</td>
-        <td>8</td>
-        <td>9</td>
-      </tr>
-      <tr>
-        <td>1</td>
-        <td>2</td>
-        <td>3</td>
-        <td>4</td>
-        <td>5</td>
-        <td>6</td>
-        <td>7</td>
-        <td>8</td>
-        <td>9</td>
-      </tr>
-      <tr>
-        <td>1</td>
-        <td>2</td>
-        <td>3</td>
-        <td>4</td>
-        <td>5</td>
-        <td>6</td>
-        <td>7</td>
-        <td>8</td>
-        <td>9</td>
-      </tr>
+      </tbody>
     </table>
   </div>
 </section>
+<app-footer></app-footer>

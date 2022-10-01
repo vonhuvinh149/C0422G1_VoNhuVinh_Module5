@@ -11,7 +11,7 @@ import { CountryComponent } from './country/country.component';
   declarations: [
     AppComponent,
     StudentComponent,
-    CountryComponent
+    CountryComponent,
   ],
   imports: [
     BrowserModule,

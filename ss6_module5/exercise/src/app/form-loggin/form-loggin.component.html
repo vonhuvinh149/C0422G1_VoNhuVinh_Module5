@@ -16,6 +16,26 @@
           </div>
         </div>
         <div class="mb-3">
+          <label for="passFormControl" class="form-label">passFormControl</label>
+          <input formControlName="passFormControl" name="passFormControl" type="password" class="form-control" id="passFormControl"
+                 aria-describedby="emailHelp">
+          <div class="text-danger"
+               *ngIf="formReactive.controls.passFormControl.hasError('required','password') && formReactive.controls.passFormControl.touched">Vui lòng
+            nhập đúng định dạng
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="confirmFormControl" class="form-label">confirmFormControl</label>
+          <input formControlName="confirmFormControl" name="confirmFormControl" type="password" class="form-control" id="confirmFormControl"
+                 aria-describedby="emailHelp">
+          <div class="text-danger"
+               *ngIf="formReactive.controls.confirmFormControl.hasError('required','password') && formReactive.controls.confirmFormControl.touched">Vui lòng
+            nhập đúng định dạng
+          </div>
+        </div>
+
+
+        <div class="mb-3">
           <label for="country" class="form-label">Country</label>
           <select formControlName="country" name="country" id="country">
             <option value="1">Viet Nam</option>

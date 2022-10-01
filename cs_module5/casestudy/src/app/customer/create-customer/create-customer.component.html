@@ -1,22 +1,32 @@
-<section>
-  <div id="form_edit">
-    <h1>Chỉnh sửa thông tin Khách hàng</h1>
-    <form action="">
-      <label for="1">Nhập tên</label>
-      <input type="text" id="1">
-      <label for="2">Nhập:</label>
-      <input type="text" id="2">
-      <label for="3">Nhập:</label>
-      <input type="text" id="3">
-      <label for="4">Nhập:</label>
-      <input type="text" id="4">
-      <label for="5">Nhập:</label>
-      <input type="text" id="5">
-      <label for="6">Nhập:</label>
-      <input type="text" id="6">
-      <label for="7">Nhập:</label>
-      <input type="text" id="7">
-      <button>Save</button>
-    </form>
+<section class="container-fluid">
+  <div class="row container-fluid">
+    <div class="col"></div>
+    <div class="col-lg-8 col-md-12">
+      <div id="form_edit">
+        <h1>Thêm mới Khách hàng</h1>
+        <form action="" [formGroup]="createCustomerForm" (ngSubmit)="getSubmitCreate()">
+          <label for="1">Nhập id khách hàng</label>
+          <input formControlName="customerId" type="text" id="1">
+          <label for="2">Nhập tên khách hàng:</label>
+          <input formControlName="customerName" type="text" id="2">
+          <label for="3">Nhập địa chỉ:</label>
+          <input formControlName="address" type="text" id="3">
+          <label for="4">Nhập số điện thoại:</label>
+          <input formControlName="phone" type="text" id="4">
+          <label for="5">Nhập loại khách hàng:</label>
+          <input formControlName="customerTypeId" type="text" id="5">
+          <label for="6">Nhập cmnn/cccd:</label>
+          <input formControlName="idCard" type="text" id="6">
+          <label for="7">Nhập giới tính:</label>
+          <input formControlName="gender" type="text" id="7">
+          <label for="8">Nhập ngày sinh:</label>
+          <input formControlName="dateOfBirth" type="text" id="8">
+          <label for="9">Nhập email khách hàng:</label>
+          <input type="text" id="9">
+          <button type="submit">Save</button>
+        </form>
+      </div>
+    </div>
+    <div class="col"></div>
   </div>
 </section>

@@ -26,7 +26,8 @@ export class CreateProducyComponent implements OnInit {
 
   onSubmit() {
     console.log(this.product.value);
-    this.productService.getCreate(this.product.value);
-    this.router.navigateByUrl('');
+    this.productService.getCreate(this.product.value).subscribe(next =>{
+      this.router.navigateByUrl('');
+    });
   }
 }

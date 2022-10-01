@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {AbstractControl, FormControl, FormGroup, ValidationErrors, ValidatorFn, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-form-loggin',
@@ -15,8 +15,16 @@ export class FormLogginComponent implements OnInit {
       country: new FormControl('', [Validators.required]),
       age: new FormControl('', [Validators.required]),
       gender: new FormControl('', [Validators.required]),
-      phone: new FormControl('', [Validators.required, Validators.pattern('^\\+84\\d{9,10}$')])
-    });
+      phone: new FormControl('', [Validators.required, Validators.pattern('^\\+84\\d{9,10}$')]),
+      passFormControl: new FormControl('', [Validators.required]),
+      confirmFormControl: new FormControl('', [Validators.required]),
+    }, {validators: this.checkPasswords});
+  }
+
+  checkPasswords: ValidatorFn = (group: AbstractControl): ValidationErrors | null => {
+    const pass = group.get('passFormControl').value;
+    const confirmPass = group.get('confirmFormControl').value;
+    return pass === confirmPass ? null : {notSame: true};
   }
 
   ngOnInit(): void {

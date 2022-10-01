@@ -1,5 +1,7 @@
 import {Injectable} from '@angular/core';
 import {IProduct} from '../model/IProduct';
+import {HttpClient} from '@angular/common/http';
+import {Observable} from 'rxjs';
 
 
 @Injectable({
@@ -7,62 +9,27 @@ import {IProduct} from '../model/IProduct';
 })
 export class ProductService {
 
-  products: IProduct[] = [{
-    productId: 1,
-    productName: 'IPhone 12',
-    price: 2400000,
-    description: 'New'
-  }, {
-    productId: 2,
-    productName: 'IPhone 11',
-    price: 1560000,
-    description: 'Like new'
-  }, {
-    productId: 3,
-    productName: 'IPhone X',
-    price: 968000,
-    description: '97%'
-  }, {
-    productId: 4,
-    productName: 'IPhone 8',
-    price: 7540000,
-    description: '98%'
-  }, {
-    productId: 5,
-    productName: 'IPhone 11 Pro',
-    price: 1895000,
-    description: 'Like new'
-  }];
 
-  constructor() {
+  constructor(private httpClient: HttpClient) {
   }
 
-  getAll() {
-    return this.products;
+  getAll(): Observable<any> {
+    return this.httpClient.get('http://localhost:3000/product');
   }
 
-  getCreate(product: IProduct) {
-    this.products.push(product);
+  getCreate(product: any) {
+    return this.httpClient.post('http://localhost:3000/product', product);
   }
 
-  getProductById(id: number) {
-    return this.products.filter(w => w.productId == id)[0];
+  getProductById(id: number):Observable<any> {
+    return this.httpClient.get('http://localhost:3000/product/' + id);
   }
 
   getDeleteProduct(id: number) {
-    for (let i = 0; i < this.products.length; i++) {
-      if (this.products[i].productId == id) {
-        this.products.splice(i, 1);
-      }
-    }
+    return this.httpClient.delete("http://localhost:3000/product/"+id);
   }
 
-  getUpdateProduct(product: IProduct) {
-    for (let i = 0; i < this.products.length; i++) {
-      if (this.products[i].productId == product.productId) {
-        this.products[i] = product;
-        break;
-      }
-    }
+  getUpdateProduct(product: any) {
+   return this.httpClient.patch('http://localhost:3000/product/'+ product.id, product)
   }
 }
